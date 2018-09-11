@@ -13,12 +13,11 @@ after_success:
   - docker build -t nickahermann/multi-nginx ./nginx
   - docker build -t nickahermann/multi-server ./server
   - docker build -t nickahermann/multi-worker ./worker
-
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
   - docker push nickahermann/multi-client
-  - docker push nicakhermann/multi-nginx
-  - docker push nicakhermann/multi-server
-  - docker push nicakhermann/multi-worker
+  - docker push nickahermann/multi-nginx
+  - docker push nickahermann/multi-server
+  - docker push nickahermann/multi-worker
 
 deploy:
   provider: elasticbeanstalk
